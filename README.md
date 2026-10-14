@@ -8,6 +8,7 @@ Partner, [Shakti Legal Compliance India](https://www.slci.in)
 ## Files
 - `index.html` — the visiting card (black & gold theme, mobile-first)
 - `siddharth-macker.webp` — profile photo
+- `slci-logo.png` — Shakti Legal Compliance India logo (partner box + browser icon)
 - `SETUP_GUIDE.txt` — how to update contact details and make the QR code
 
 ## Updating contact details

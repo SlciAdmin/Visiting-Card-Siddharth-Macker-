@@ -22,65 +22,69 @@
   --bg:#0b0a08;--card:#14120f;--card-2:#1b1814;--line:#2c271f;
   --gold:#c9a45c;--gold-soft:#e3c98f;--gold-dim:#8a7140;
   --text:#f3ede2;--muted:#a59a88;--focus:#e3c98f;
+  --pad:10px;--row:50px;--gap:6px;--ic:34px;
 }
 *{box-sizing:border-box}
+html,body{height:100%}
 html{-webkit-text-size-adjust:100%}
 body{
-  margin:0;min-height:100vh;min-height:100svh;display:grid;place-items:center;
-  padding:16px;color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  margin:0;height:100vh;height:100dvh;overflow:hidden;display:grid;place-items:center;
+  padding:var(--pad);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   background:var(--bg);
   background-image:
     radial-gradient(circle at 12% 18%,#c9a45c1f 0,transparent 32%),
     radial-gradient(circle at 88% 82%,#8a5a2a1c 0,transparent 36%);
 }
+
+/* One rectangle that always fits the screen: no scrolling */
 .card{
-  width:min(100%,440px);overflow:hidden;border-radius:22px;background:var(--card);
+  width:min(100%,440px);height:100%;max-height:820px;
+  display:flex;flex-direction:column;overflow:hidden;border-radius:20px;background:var(--card);
   border:1px solid var(--line);box-shadow:0 30px 70px #000000a8,0 0 0 1px #c9a45c14 inset;
   animation:arrive .6s ease-out both;
 }
 
 /* ---------- Photo + identity ---------- */
-.hero{position:relative;aspect-ratio:4/4.3;background:#1a1510}
-.hero img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,#14120fcc 72%,var(--card) 99%)}
-.identity{position:absolute;z-index:1;left:0;right:0;bottom:0;padding:0 24px 18px;text-align:center}
-h1{margin:0;font:700 40px/1 "Cormorant Garamond",Georgia,serif;letter-spacing:.01em;color:#fff}
-.role{margin:9px 0 0;font:500 14px/1.45 Inter,sans-serif;color:var(--gold-soft)}
-.role b{font-weight:500;white-space:nowrap}
-.role span{color:var(--gold-dim);padding:0 6px}
-@media(max-width:419px){.role b{display:block}.role span{display:none}.contact .cta{display:none}}
+.hero{position:relative;flex:1 1 auto;min-height:150px;background:#1a1510;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 14%;display:block}
+/* dark scrim under the name so text stays readable on the photo */
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,#0b0a08b3 62%,#0b0a08f2 86%,var(--card) 100%)}
+.identity{position:absolute;z-index:1;left:0;right:0;bottom:0;padding:0 18px 12px;text-align:center}
+h1{margin:0;font:700 36px/1 "Cormorant Garamond",Georgia,serif;letter-spacing:.01em;color:#fff;text-shadow:0 2px 14px #000,0 1px 2px #000}
+.role{margin:7px 0 0;font:600 13.5px/1.45 Inter,sans-serif;color:#f1dcaa;text-shadow:0 1px 8px #000,0 1px 2px #000}
+.role b{font-weight:600;white-space:nowrap}
+.role span{color:var(--gold);padding:0 6px}
 
-/* ---------- Body ---------- */
-.content{padding:6px 18px 20px}
+/* ---------- Details ---------- */
+.content{flex:none;padding:4px 14px 14px}
 .firm{
-  display:flex;align-items:center;gap:12px;margin:0 0 16px;padding:12px 14px;border-radius:14px;
-  text-decoration:none;color:var(--text);background:linear-gradient(135deg,#c9a45c1f,#c9a45c08);
-  border:1px solid #c9a45c40;transition:border-color .18s ease,transform .18s ease;
+  display:flex;align-items:center;gap:11px;margin:0 0 var(--gap);padding:8px 12px;border-radius:13px;
+  text-decoration:none;color:var(--text);background:linear-gradient(135deg,#c9a45c24,#c9a45c0a);
+  border:1px solid #c9a45c4d;transition:border-color .18s ease,transform .18s ease;
 }
 .firm:hover{border-color:var(--gold);transform:translateY(-1px)}
-.firm .seal{width:44px;height:44px;flex:none;display:grid;place-items:center;border-radius:50%;background:#fbf8f1;border:1px solid var(--gold);padding:6px}
+.firm .seal{width:40px;height:40px;flex:none;display:grid;place-items:center;border-radius:50%;background:#fbf8f1;border:1px solid var(--gold);padding:5px}
 .firm .seal img{width:100%;height:100%;object-fit:contain;display:block}
 .firm .txt{min-width:0;flex:1}
-.firm small{display:block;color:var(--muted);font:600 9.5px/1.3 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase}
-.firm strong{display:block;margin-top:3px;font:600 15px/1.25 Inter,sans-serif}
-.firm em{display:block;margin-top:2px;font-style:normal;color:var(--gold);font-size:12px}
+.firm small{display:block;color:var(--muted);font:600 9px/1.3 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.firm strong{display:block;margin-top:2px;font:600 14px/1.25 Inter,sans-serif}
+.firm em{display:block;margin-top:1px;font-style:normal;color:var(--gold);font-size:11.5px}
 .firm .go{color:var(--gold);font-size:20px;flex:none}
 
-.section-title{margin:0 2px 8px;color:var(--muted);font:600 10px/1 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase}
-.contacts{display:grid;gap:8px}
+.contacts{display:grid;gap:var(--gap)}
 .contact{
-  display:flex;align-items:center;gap:13px;min-height:58px;padding:10px 14px;border-radius:14px;
+  display:flex;align-items:center;gap:11px;min-height:var(--row);padding:6px 12px;border-radius:13px;
   text-decoration:none;color:var(--text);background:var(--card-2);border:1px solid var(--line);
   transition:border-color .18s ease,background .18s ease,transform .18s ease;
 }
 .contact:hover{border-color:#c9a45c66;background:#211d17;transform:translateY(-1px)}
 .contact:active{transform:scale(.99)}
 .contact[hidden]{display:none}
-.ic{width:38px;height:38px;flex:none;display:grid;place-items:center;border-radius:11px;background:#c9a45c1a;color:var(--gold-soft)}
-.ic svg{width:19px;height:19px}
+.ic{width:var(--ic);height:var(--ic);flex:none;display:grid;place-items:center;border-radius:10px;background:#c9a45c1a;color:var(--gold-soft)}
+.ic svg{width:18px;height:18px}
 .contact .txt{min-width:0;flex:1}
-.label{display:block;color:var(--muted);font:600 10px/1.2 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase}
-.value{display:block;margin-top:3px;font:500 15px/1.3 Inter,sans-serif;overflow-wrap:anywhere}
+.label{display:block;color:var(--muted);font:600 9.5px/1.2 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.value{display:block;margin-top:2px;font:500 14.5px/1.25 Inter,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cta{flex:none;padding:6px 11px;border-radius:999px;border:1px solid #c9a45c55;color:var(--gold-soft);font:600 11px/1 Inter,sans-serif;letter-spacing:.04em}
 .contact.primary{background:linear-gradient(135deg,#c9a45c,#a9823d);border-color:transparent;color:#17120a}
 .contact.primary .ic{background:#17120a1f;color:#17120a}
@@ -90,29 +94,61 @@ h1{margin:0;font:700 40px/1 "Cormorant Garamond",Georgia,serif;letter-spacing:.0
 .contact.primary:hover{background:linear-gradient(135deg,#d6b26a,#b48c44)}
 
 a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
-.footer{padding:14px 18px 18px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font:12px/1.5 Inter,sans-serif}
-.footer a{color:var(--gold-soft);text-decoration:none}
 
 @keyframes arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-@media(max-width:360px){
-  body{padding:10px}
-  h1{font-size:34px}
-  .role{font-size:13px}
-  .content{padding:4px 12px 16px}
-  .contact{gap:10px;padding:9px 11px}
-  .value{font-size:14px}
-  .cta{display:none}
+
+/* phones */
+@media(max-width:419px){
+  .role b{display:block}.role span{display:none}
+  .contact .cta{display:none}
 }
-@media(min-width:820px){
-  body{padding:32px}
-  .card{width:min(100%,940px);display:grid;grid-template-columns:400px 1fr;grid-template-rows:1fr auto}
-  .hero{grid-row:1/3;aspect-ratio:auto;min-height:600px}
-  .hero:after{background:linear-gradient(180deg,transparent 50%,#0b0a08e6 100%),linear-gradient(90deg,transparent 80%,#14120f80)}
-  .identity{text-align:left;padding:0 28px 28px}
-  h1{font-size:46px}
-  .content{padding:34px 34px 20px;align-self:center}
-  .footer{text-align:left;padding:14px 34px 20px}
+/* short screens: tighten everything so it still fits */
+@media(max-height:700px){
+  :root{--row:44px;--gap:5px;--ic:30px}
+  h1{font-size:31px}
+  .role{font-size:12.5px;margin-top:5px}
+  .identity{padding-bottom:8px}
+  .firm{padding:6px 10px}
+  .firm .seal{width:34px;height:34px}
+  .firm strong{font-size:13px}
+  .value{font-size:13.5px}
+  .ic svg{width:16px;height:16px}
+}
+@media(max-height:580px){
+  :root{--row:40px;--gap:4px;--ic:28px;--pad:6px}
+  .firm em{display:none}
+  .label{font-size:8.5px}
+  h1{font-size:28px}
+}
+
+/* wide screens & phones held sideways: landscape rectangle, photo on the left */
+@media(min-width:640px) and (min-aspect-ratio:1/1){
+  :root{--pad:24px}
+  .card{width:min(100%,960px);height:auto;max-height:100%;aspect-ratio:16/10;flex-direction:row}
+  .hero{flex:0 0 42%;min-height:0}
+  .hero:after{background:linear-gradient(180deg,transparent 40%,#0b0a08bf 70%,#0b0a08f2 100%)}
+  .identity{text-align:left;padding:0 24px 22px}
+  .role b{display:inline}.role span{display:inline}
+  h1{font-size:clamp(28px,4.2vw,46px)}
+  .content{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(12px,3vw,34px)}
+  .contact .cta{display:block}
+}
+@media(min-width:640px) and (min-aspect-ratio:1/1) and (max-height:520px){
+  :root{--pad:8px}
+  .card{aspect-ratio:auto;height:100%}
+  .hero{flex-basis:36%}
+  .role b{display:block}.role span{display:none}
+  .identity{padding:0 16px 12px}
+  .contact .cta{display:none}
+}
+@media(min-width:640px) and (min-aspect-ratio:1/1) and (min-height:600px){
+  :root{--row:58px;--gap:9px;--ic:40px}
+  .value{font-size:16px}
+  .label{font-size:10px}
+  .firm{padding:12px 14px;margin-bottom:14px}
+  .firm .seal{width:46px;height:46px}
+  .firm strong{font-size:15.5px}
 }
 </style>
 </head>
@@ -137,8 +173,7 @@ a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
       <span class="go" aria-hidden="true">›</span>
     </a>
 
-    <h2 class="section-title">Contact</h2>
-    <div class="contacts">
+    <div class="contacts" aria-label="Contact">
       <a class="contact primary" id="c-mobile" hidden>
         <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a15 15 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2C10 20 4 14 3 6a2 2 0 0 1 2-2Z"/></svg></span>
         <span class="txt"><span class="label">Mobile</span><span class="value"></span></span>
@@ -167,9 +202,6 @@ a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
     </div>
   </main>
 
-  <footer class="footer">
-    Shakti Legal Compliance India · <a href="https://www.slci.in" target="_blank" rel="noopener noreferrer">www.slci.in</a>
-  </footer>
 </article>
 
 <script>

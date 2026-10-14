@@ -101,7 +101,9 @@ a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 /* phones */
 @media(max-width:419px){
   .role b{display:block}.role span{display:none}
-  .contact .cta{display:none}
+  .contact{gap:9px;padding:6px 10px}
+  .contact .cta{padding:5px 8px;font-size:10px;letter-spacing:.02em}
+  .value{font-size:13.5px}
 }
 /* short screens: tighten everything so it still fits */
 @media(max-height:700px){
@@ -132,15 +134,14 @@ a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
   .role b{display:inline}.role span{display:inline}
   h1{font-size:clamp(28px,4.2vw,46px)}
   .content{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(12px,3vw,34px)}
-  .contact .cta{display:block}
 }
 @media(min-width:640px) and (min-aspect-ratio:1/1) and (max-height:520px){
   :root{--pad:8px}
   .card{aspect-ratio:auto;height:100%}
   .hero{flex-basis:36%}
+  .contact .cta{padding:4px 8px;font-size:10px}
   .role b{display:block}.role span{display:none}
   .identity{padding:0 16px 12px}
-  .contact .cta{display:none}
 }
 @media(min-width:640px) and (min-aspect-ratio:1/1) and (min-height:600px){
   :root{--row:58px;--gap:9px;--ic:40px}

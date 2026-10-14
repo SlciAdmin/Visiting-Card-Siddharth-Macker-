@@ -21,3 +21,13 @@ https://slciadmin.github.io/Visiting-Card-Siddharth-Macker-/
 3. SHAKTI LEGAL COMPLIANCE INDIA
    - Card par "Partner — Shakti Legal Compliance India" tap karne par www.slci.in khulta hai.
    - "Editor-in-Chief — Shakti Times" tap karne par www.shaktitimes.in khulta hai.
+
+4. SHARE, QR AUR NFC
+   - Share button (photo ke upar right side): iPhone par AirDrop, Android par Quick Share / Nearby Share,
+     WhatsApp waghera ka share menu khulta hai.
+   - QR button: card ka QR screen par dikhata hai. Saamne wala seedha aapke phone se scan kar sakta hai.
+     Wahin "Copy link" aur "Download QR" bhi hai.
+   - qr-code.png (repository mein) print ke liye 1024px ka QR hai. Yeh seedha card ka link kholta hai aur kabhi expire nahi hota.
+   - NFC: Android phone mein Chrome se card kholein -> QR -> "Write to NFC tag" -> blank NFC card/sticker phone ke
+     peeche lagayein. Uske baad koi bhi phone us NFC card se touch karega to yeh visiting card khul jayega.
+     (iPhone par website NFC tag write nahi kar sakti; iPhone se likhna ho to "NFC Tools" app use karein.)

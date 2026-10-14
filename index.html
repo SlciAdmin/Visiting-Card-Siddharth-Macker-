@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b0a08">
 <title>Siddharth Macker | Advocate, Supreme Court</title>
-<meta name="description" content="Siddharth Macker, Advocate, Supreme Court of India. Expert in Labour Laws. Partner, Shakti Legal Compliance India. Editor-in-Chief, Shakti Times.">
+<meta name="description" content="Siddharth Macker, Advocate, Supreme Court of India. Expert in Labour Law Consulting. Partner, Shakti Legal Compliance India. Editor-in-Chief, Shakti Times.">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Siddharth Macker | Advocate, Supreme Court">
-<meta property="og:description" content="Expert in Labour Laws · Partner, Shakti Legal Compliance India · Editor-in-Chief, Shakti Times">
+<meta property="og:description" content="Expert in Labour Law Consulting · Partner, Shakti Legal Compliance India · Editor-in-Chief, Shakti Times">
 <meta property="og:image" content="https://slciadmin.github.io/Visiting-Card-Siddharth-Macker-/siddharth-macker.webp">
 <meta property="og:url" content="https://slciadmin.github.io/Visiting-Card-Siddharth-Macker-/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -152,6 +152,43 @@ a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
   .firm .seal{width:46px;height:46px}
   .firm strong{font-size:15.5px}
 }
+
+/* ---------- Share / QR (top-right of photo) ---------- */
+.tools{position:absolute;z-index:2;top:12px;right:12px;display:flex;gap:8px}
+.tool{
+  display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:999px;cursor:pointer;
+  background:#0b0a08b8;color:var(--gold-soft);border:1px solid #c9a45c80;font:600 12px/1 Inter,sans-serif;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 4px 14px #00000066;transition:background .18s ease,border-color .18s ease;
+}
+.tool:hover{background:#0b0a08e0;border-color:var(--gold)}
+.tool svg{width:16px;height:16px}
+button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+
+.sheet{border:0;padding:0;background:transparent;color:var(--text);max-width:none;max-height:none;width:100%;height:100%}
+.sheet::backdrop{background:#000000b3;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.sheet[open]{display:grid;place-items:center}
+.sheet-box{
+  position:relative;width:min(calc(100% - 32px),360px);max-height:calc(100% - 32px);overflow:auto;padding:22px 20px 18px;border-radius:20px;
+  background:var(--card);border:1px solid #c9a45c55;box-shadow:0 30px 70px #000000c0;text-align:center;animation:arrive .25s ease-out both;
+}
+.sheet h2{margin:0;font:700 26px/1.1 "Cormorant Garamond",Georgia,serif;color:#fff}
+.sheet p{margin:6px 0 0;color:var(--muted);font:13px/1.45 Inter,sans-serif}
+.qr{display:block;width:min(100%,220px);margin:16px auto 6px;padding:10px;border-radius:14px;background:#fff}
+.qr img{display:block;width:100%;height:auto}
+.url{display:block;margin:0 0 14px;color:var(--gold);font:500 11.5px/1.4 Inter,sans-serif;overflow-wrap:anywhere}
+.sheet-actions{display:grid;gap:8px}
+.sbtn{
+  display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 14px;border-radius:12px;cursor:pointer;text-decoration:none;
+  background:var(--card-2);color:var(--text);border:1px solid var(--line);font:600 13.5px/1 Inter,sans-serif;
+}
+.sbtn:hover{border-color:#c9a45c66}
+.sbtn.gold{background:linear-gradient(135deg,#c9a45c,#a9823d);color:#17120a;border-color:transparent}
+.sbtn svg{width:17px;height:17px}
+.sbtn[hidden]{display:none}
+.close{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--card-2);color:var(--muted);font:20px/1 Inter,sans-serif;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:22px;z-index:10;transform:translate(-50%,20px);opacity:0;pointer-events:none;padding:10px 16px;border-radius:999px;background:#f3ede2;color:#17120a;font:600 13px/1.2 Inter,sans-serif;box-shadow:0 10px 30px #0008;transition:opacity .2s ease,transform .2s ease}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-height:580px){.tools{top:8px;right:8px}.tool{height:32px;padding:0 10px}}
 </style>
 </head>
 <body>
@@ -160,7 +197,15 @@ a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
     <img src="siddharth-macker.webp" alt="Siddharth Macker, Advocate" width="1178" height="1335">
     <div class="identity">
       <h1>Siddharth Macker</h1>
-      <p class="role"><b>Advocate, Supreme Court</b><span>|</span><b>Expert in Labour Laws</b></p>
+      <p class="role"><b>Advocate, Supreme Court</b><span>|</span><b>Expert in Labour Law Consulting</b></p>
+    </div>
+    <div class="tools">
+      <button class="tool" type="button" id="btn-share" aria-label="Share this card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>Share
+      </button>
+      <button class="tool" type="button" id="btn-qr" aria-label="Show QR code">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg>QR
+      </button>
     </div>
   </header>
 
@@ -215,6 +260,31 @@ a:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
 
 </article>
 
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+  <div class="sheet-box">
+    <button class="close" type="button" id="sheet-close" aria-label="Close">×</button>
+    <h2 id="sheet-title">Siddharth Macker</h2>
+    <p>Scan to open this card</p>
+    <span class="qr"><img src="qr-code.svg" alt="QR code for this digital card" width="220" height="220"></span>
+    <span class="url" id="card-url"></span>
+    <div class="sheet-actions">
+      <button class="sbtn gold" type="button" id="sheet-share">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>Share (AirDrop / Quick Share)
+      </button>
+      <button class="sbtn" type="button" id="sheet-nfc" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8.5a5 5 0 0 1 0 7M9.5 6a9 9 0 0 1 0 12M13 3.5a13 13 0 0 1 0 17"/></svg>Write to NFC tag
+      </button>
+      <button class="sbtn" type="button" id="sheet-copy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>Copy link
+      </button>
+      <a class="sbtn" href="qr-code.png" download="Siddharth-Macker-QR.png">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3"/></svg>Download QR
+      </a>
+    </div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script>
 /* ===== CONTACT DETAILS — edit only this block =====
    Leave a value empty ("") to hide that row on the card.
@@ -246,6 +316,59 @@ for (const key in rows) {
   el.querySelector(".value").textContent = text;
   el.setAttribute("aria-label", el.querySelector(".label").textContent + ": " + text);
   el.hidden = false;
+}
+
+/* ===== Share, QR and NFC ===== */
+const CARD_URL = "https://slciadmin.github.io/Visiting-Card-Siddharth-Macker-/";
+const shareData = {
+  title: "Siddharth Macker | Advocate, Supreme Court",
+  text: "Siddharth Macker, Advocate, Supreme Court | Expert in Labour Law Consulting",
+  url: CARD_URL
+};
+const sheet = document.getElementById("sheet");
+const toastEl = document.getElementById("toast");
+let toastTimer;
+function toast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2600);
+}
+function openSheet() { if (!sheet.open) sheet.showModal(); }
+async function copyLink() {
+  try { await navigator.clipboard.writeText(CARD_URL); toast("Link copied"); }
+  catch { toast(CARD_URL); }
+}
+// iPhone share sheet includes AirDrop; Android includes Quick Share / Nearby Share
+async function share() {
+  if (navigator.share) {
+    try { await navigator.share(shareData); } catch (e) { if (e.name !== "AbortError") openSheet(); }
+  } else {
+    openSheet();
+  }
+}
+document.getElementById("card-url").textContent = CARD_URL.replace(/^https:\/\//, "");
+document.getElementById("btn-share").addEventListener("click", share);
+document.getElementById("btn-qr").addEventListener("click", openSheet);
+document.getElementById("sheet-share").addEventListener("click", share);
+document.getElementById("sheet-copy").addEventListener("click", copyLink);
+document.getElementById("sheet-close").addEventListener("click", () => sheet.close());
+sheet.addEventListener("click", e => { if (e.target === sheet) sheet.close(); });
+
+// Web NFC works only in Chrome on Android: writes the card link to a blank NFC tag/card,
+// so any phone tapped on that tag opens this card.
+if ("NDEFReader" in window) {
+  const nfcBtn = document.getElementById("sheet-nfc");
+  nfcBtn.hidden = false;
+  nfcBtn.addEventListener("click", async () => {
+    try {
+      toast("Hold an NFC tag to the back of your phone");
+      await new NDEFReader().write({ records: [{ recordType: "url", data: CARD_URL }] });
+      toast("Card link written to NFC tag");
+    } catch (e) {
+      toast("NFC write failed: " + (e.message || e.name));
+    }
+  });
 }
 </script>
 </body>

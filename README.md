@@ -1,13 +1,15 @@
-# Digital Visiting Card
+# Siddharth Macker — Digital Visiting Card
 
-A responsive navy-and-gold digital visiting card.
+Advocate, Supreme Court | Expert in Labour Laws
+Partner, [Shakti Legal Compliance India](https://www.slci.in)
+
+**Live:** https://slciadmin.github.io/Visiting-Card-Siddharth-Macker-/
 
 ## Files
-- `index.html` — the digital visiting card page
-- `Nikhil.vcf` — contact file (tap **Save Contact** on the page to download)
-- `Direct_Contact_QR_NOT_WEBSITE.png` — QR containing contact data only (does not open the website)
-- `SETUP_GUIDE.txt` — hosting and QR setup steps
+- `index.html` — the visiting card (black & gold theme, mobile-first)
+- `siddharth-macker.webp` — profile photo
+- `SETUP_GUIDE.txt` — how to update contact details and make the QR code
 
-## Hosting
-Host `index.html` and `Nikhil.vcf` together at a public HTTPS URL (e.g. GitHub Pages or Netlify),
-then generate a QR code pointing to that live URL. See `SETUP_GUIDE.txt` for details.
+## Updating contact details
+Open `index.html`, scroll to the `CONTACT` block near the bottom, fill in the values and push.
+Any value left empty is hidden on the card. GitHub Pages republishes in about a minute.

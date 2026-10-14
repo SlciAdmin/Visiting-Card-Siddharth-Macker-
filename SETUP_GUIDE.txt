@@ -1,29 +1,22 @@
-NIKHIL — DIGITAL VISITING CARD PACKAGE
+SIDDHARTH MACKER — DIGITAL VISITING CARD
 
-FILES
-- index.html: responsive premium navy-and-gold digital visiting card
-- Nikhil.vcf: contact file for saving to phone contacts
-- QR_Code_MUST_BE_CREATED_AFTER_HOSTING.png: QR code containing contact data only, NOT the website URL
-- SETUP_GUIDE.txt: setup steps
+LIVE LINK
+https://slciadmin.github.io/Visiting-Card-Siddharth-Macker-/
 
-IMPORTANT TO GET THE EXACT EXPERIENCE REQUESTED
-To scan a QR and have this designed card open, the index.html page must be hosted at a public HTTPS URL.
-Then generate a QR code that points to that live URL. The included QR image is a direct contact QR and will not open the designed website.
-After hosting, scan the URL QR; the digital card opens, and the user can tap Download / Save Contact. The phone will ask them to confirm adding the contact.
-A QR/webpage cannot silently save a contact without user confirmation.
+1. CONTACT DETAILS UPDATE KAISE KAREIN
+   - index.html kholein, neeche "CONTACT DETAILS" wala block dhoondein:
+       mobile:    "9876543210"                                  -> tap karne par call lagega
+       whatsapp:  "9876543210"                                  -> WhatsApp chat khulega
+       linkedin:  "https://www.linkedin.com/in/username"        -> LinkedIn profile khulega
+       instagram: "username"                                    -> Instagram profile khulega
+       email:     "info@slci.in"                                -> email khulega
+   - Jo value khaali ("") rahegi, woh card par nahi dikhegi.
+   - Save karke GitHub par push karein. 1 minute mein site update ho jaati hai.
 
-CONTACT DETAILS
-Name: Nikhil
-Phone: 9610608060
-Email: Nikhilbajaj2690@gmail.com
-Instagram: https://instagram.com/bajajsaab25
-LinkedIn: https://www.linkedin.com/in/nikhilbajaj12
+2. QR CODE
+   - Kisi bhi QR generator mein upar wala LIVE LINK daalkar QR banayein.
+   - Link kabhi nahi badalta, isliye details update karne par QR dobara nahi banana padta.
+   - Print se pehle Android aur iPhone dono par scan karke test karein.
 
-FREE HOSTING QUICK STEPS
-1. Extract this ZIP.
-2. Open https://app.netlify.com/drop and sign in if asked.
-3. Upload the folder's site files (index.html and Nikhil.vcf together).
-4. Copy the HTTPS site URL Netlify gives you.
-5. Generate a NEW QR code from that live URL (for example using a QR generator).
-6. Test the QR on Android and iPhone before printing.
-Do not print the included direct-contact QR if you want the designed website to open.
+3. SHAKTI LEGAL COMPLIANCE INDIA
+   - Card par "Partner — Shakti Legal Compliance India" tap karne par www.slci.in khulta hai.

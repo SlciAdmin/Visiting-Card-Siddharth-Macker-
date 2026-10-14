@@ -2,7 +2,7 @@
 
 Advocate, Supreme Court | Expert in Labour Laws
 Partner, [Shakti Legal Compliance India](https://www.slci.in)
-Editor, [Shakti Times](https://www.shaktitimes.in)
+Editor-in-Chief, [Shakti Times](https://www.shaktitimes.in)
 
 **Live:** https://slciadmin.github.io/Visiting-Card-Siddharth-Macker-/
 
